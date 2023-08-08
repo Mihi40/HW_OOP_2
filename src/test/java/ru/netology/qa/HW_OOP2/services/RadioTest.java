@@ -4,6 +4,17 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+
+    @Test
+    public void countQuantityRadioStation() {
+        Radio radio = new Radio(20);
+        radio.setCurrentRadioStationNumber(19);
+
+        int expected = 19;
+        int actual = radio.getCurrentRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
     @Test
     public void shouldSetRadioStationNumber() {
         Radio radio = new Radio();
@@ -236,7 +247,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
     @Test
     public void increaseVolumeToHundred() {
         Radio radio = new Radio();
@@ -249,6 +259,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
+
 
 
 
