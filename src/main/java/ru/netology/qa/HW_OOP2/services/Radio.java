@@ -3,6 +3,15 @@ package ru.netology.qa.HW_OOP2.services;
 public class Radio {
     private int currentRadioStationNumber;
     private int currentSoundVolume;
+    private int maxRadioStation;
+
+    public Radio() {
+        maxRadioStation = 9;
+    }
+
+    public Radio(int QuantityRadioStation) {
+        maxRadioStation = QuantityRadioStation - 1;
+    }
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
@@ -12,14 +21,14 @@ public class Radio {
         if (currentRadioStationNumber < 0) {
             return;
         }
-        if (currentRadioStationNumber > 9) {
+        if (currentRadioStationNumber > maxRadioStation) {
             return;
         }
         this.currentRadioStationNumber = currentRadioStationNumber;
     }
 
     public void nextStation() {
-        if (currentRadioStationNumber != 9) {
+        if (currentRadioStationNumber != maxRadioStation) {
             currentRadioStationNumber++;
             return;
         } else {
@@ -32,7 +41,7 @@ public class Radio {
             currentRadioStationNumber--;
             return;
         } else {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = maxRadioStation;
         }
     }
 
